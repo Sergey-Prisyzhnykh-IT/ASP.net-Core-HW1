@@ -4,9 +4,9 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-/*Реализуйте страницу, которая будет показывать текущую дату и время в полном формате 
- (включая название дня недели и месяца), на языке переданном в параметре language. П
- араметр language передается в формате ISO 639-1 (ru, en, fr, cn и т. д.).*/
+/*Р РµР°Р»РёР·СѓР№С‚Рµ СЃС‚СЂР°РЅРёС†Сѓ, РєРѕС‚РѕСЂР°СЏ Р±СѓРґРµС‚ РїРѕРєР°Р·С‹РІР°С‚СЊ С‚РµРєСѓС‰СѓСЋ РґР°С‚Сѓ Рё РІСЂРµРјСЏ РІ РїРѕР»РЅРѕРј С„РѕСЂРјР°С‚Рµ 
+ (РІРєР»СЋС‡Р°СЏ РЅР°Р·РІР°РЅРёРµ РґРЅСЏ РЅРµРґРµР»Рё Рё РјРµСЃСЏС†Р°), РЅР° СЏР·С‹РєРµ РїРµСЂРµРґР°РЅРЅРѕРј РІ РїР°СЂР°РјРµС‚СЂРµ language. Рџ
+ Р°СЂР°РјРµС‚СЂ language РїРµСЂРµРґР°РµС‚СЃСЏ РІ С„РѕСЂРјР°С‚Рµ ISO 639-1 (ru, en, fr, cn Рё С‚. Рґ.).*/
 
 var fullData = FullData("fr-FR");
 
@@ -21,11 +21,11 @@ app.MapGet("/", () => fullData);
 
 
 
-/*Необходимо создать веб приложение со страницей (/customs_duty), 
- которая будет вычислять размер таможенной пошлины: в параметре
- price передается стоимость посылки. Пошлина начисляется при превышении 200€, 
- а ее размер равен 15% от суммы превышения.
-Сделайте отображение истории расчетов таможенной пошлины.*/
+/*РќРµРѕР±С…РѕРґРёРјРѕ СЃРѕР·РґР°С‚СЊ РІРµР± РїСЂРёР»РѕР¶РµРЅРёРµ СЃРѕ СЃС‚СЂР°РЅРёС†РµР№ (/customs_duty), 
+ РєРѕС‚РѕСЂР°СЏ Р±СѓРґРµС‚ РІС‹С‡РёСЃР»СЏС‚СЊ СЂР°Р·РјРµСЂ С‚Р°РјРѕР¶РµРЅРЅРѕР№ РїРѕС€Р»РёРЅС‹: РІ РїР°СЂР°РјРµС‚СЂРµ
+ price РїРµСЂРµРґР°РµС‚СЃСЏ СЃС‚РѕРёРјРѕСЃС‚СЊ РїРѕСЃС‹Р»РєРё. РџРѕС€Р»РёРЅР° РЅР°С‡РёСЃР»СЏРµС‚СЃСЏ РїСЂРё РїСЂРµРІС‹С€РµРЅРёРё 200в‚¬, 
+ Р° РµРµ СЂР°Р·РјРµСЂ СЂР°РІРµРЅ 15% РѕС‚ СЃСѓРјРјС‹ РїСЂРµРІС‹С€РµРЅРёСЏ.
+РЎРґРµР»Р°Р№С‚Рµ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РёСЃС‚РѕСЂРёРё СЂР°СЃС‡РµС‚РѕРІ С‚Р°РјРѕР¶РµРЅРЅРѕР№ РїРѕС€Р»РёРЅС‹.*/
 
 double _price = 1000;
 
@@ -36,7 +36,7 @@ var _path = CreateTempDirectoryAndWrite(@"C:\TempDuty");
 var _lastRequests = ReadFile(_path);
 
 /// <summary>
-/// создает файл и записывает в него все цены и пошлины (возращает путь потому что лень стало заморачиваться( )
+/// СЃРѕР·РґР°РµС‚ С„Р°Р№Р» Рё Р·Р°РїРёСЃС‹РІР°РµС‚ РІ РЅРµРіРѕ РІСЃРµ С†РµРЅС‹ Рё РїРѕС€Р»РёРЅС‹ (РІРѕР·СЂР°С‰Р°РµС‚ РїСѓС‚СЊ РїРѕС‚РѕРјСѓ С‡С‚Рѕ Р»РµРЅСЊ СЃС‚Р°Р»Рѕ Р·Р°РјРѕСЂР°С‡РёРІР°С‚СЊСЃСЏ( )
 /// </summary>
 string CreateTempDirectoryAndWrite(string path) 
 {
@@ -50,7 +50,7 @@ string CreateTempDirectoryAndWrite(string path)
 
         using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
         {
-            sw.WriteLine($"цена = {_price} {_customsDuty}");
+            sw.WriteLine($"С†РµРЅР° = {_price} {_customsDuty}");
         }
         return writePath.ToString();
     }
@@ -61,7 +61,7 @@ string CreateTempDirectoryAndWrite(string path)
 
 }
 /// <summary>
-/// читает файл 
+/// С‡РёС‚Р°РµС‚ С„Р°Р№Р» 
 /// </summary>
 StringBuilder ReadFile(string path)
 {
@@ -84,7 +84,7 @@ StringBuilder ReadFile(string path)
     {
         StringBuilder sb = new StringBuilder(100);
 
-        return sb.Append("Что то пошло не так" + exp.ToString());
+        return sb.Append("Р§С‚Рѕ С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє" + exp.ToString());
     } 
 }
 
@@ -92,19 +92,19 @@ StringBuilder ReadFile(string path)
 string CustomsDuty(double price)
 {
     if (price <= 200)
-        return "Пошлины нет :)";
+        return "РџРѕС€Р»РёРЅС‹ РЅРµС‚ :)";
     else 
     {
         var excess = price - 200;
         var customsDuty = excess * 0.15;
-        return "Пошлина = " + customsDuty.ToString();
+        return "РџРѕС€Р»РёРЅР° = " + customsDuty.ToString();
     }
         
 }
 
 app.MapGet
     (
-        "/customs_duty", () => _customsDuty + "\n\n" + "Прошлые запросы" +"\n" + _lastRequests.ToString()
+        "/customs_duty", () => _customsDuty + "\n\n" + "РџСЂРѕС€Р»С‹Рµ Р·Р°РїСЂРѕСЃС‹" +"\n" + _lastRequests.ToString()
     );
 
 app.Run();

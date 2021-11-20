@@ -17,7 +17,7 @@ namespace HomeWork.Test
         }
 
         [Fact]
-        public void IndexViewDataMessage()
+        public void IndexViewType()
         {
             string result = HW1.CustomsDuty(300) as string;
 

@@ -5,7 +5,19 @@
     <projectFile profileName="IIS Express">HomeWork1/HomeWork1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ad677fe-6464-4b11-a863-6ef8a59e1db7" name="Changes" comment="" />
+    <list default="true" id="3ad677fe-6464-4b11-a863-6ef8a59e1db7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HomeWork1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HomeWork1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/HomeWork1/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/HomeWork1/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork.Test/obj/Debug/net6.0/HomeWork.Test.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork.Test/obj/Debug/net6.0/HomeWork.Test.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/bin/Debug/net6.0/HomeWork1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/bin/Debug/net6.0/HomeWork1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/bin/Debug/net6.0/HomeWork1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/bin/Debug/net6.0/HomeWork1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/bin/Debug/net6.0/ref/HomeWork1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/bin/Debug/net6.0/ref/HomeWork1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/obj/Debug/net6.0/HomeWork1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/obj/Debug/net6.0/HomeWork1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/obj/Debug/net6.0/HomeWork1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/obj/Debug/net6.0/HomeWork1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/obj/Debug/net6.0/ref/HomeWork1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/obj/Debug/net6.0/ref/HomeWork1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HomeWork1/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/HomeWork1/obj/staticwebassets.pack.sentinel" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +79,8 @@
       <option name="presentableId" value="Default" />
       <updated>1637410394697</updated>
       <workItem from="1637410400652" duration="18000" />
+      <workItem from="1637428058335" duration="1684000" />
+      <workItem from="1637432223806" duration="46000" />
     </task>
     <servers />
   </component>
@@ -74,7 +88,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

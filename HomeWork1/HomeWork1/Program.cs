@@ -7,18 +7,17 @@ var app = builder.Build();
 /*Реализуйте страницу, которая будет показывать текущую дату и время в полном формате 
  (включая название дня недели и месяца), на языке переданном в параметре language. П
  араметр language передается в формате ISO 639-1 (ru, en, fr, cn и т. д.).*/
-
-var fullData = FullData("fr-FR");
+/*
+var fullData = FullData("ru-RU");
 
 string FullData(string language)
 {
     return DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss", CultureInfo.GetCultureInfo(language));
-}
+}*/
 
-app.MapGet("/", () => fullData);
+app.MapGet("/", () => DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss"));
 
-
-
+app.MapGet("/language", (string language) => DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss", CultureInfo.GetCultureInfo(language)));
 
 
 /*Необходимо создать веб приложение со страницей (/customs_duty), 
@@ -27,18 +26,12 @@ app.MapGet("/", () => fullData);
  а ее размер равен 15% от суммы превышения.
 Сделайте отображение истории расчетов таможенной пошлины.*/
 
-double _price = 1000;
-
-var _customsDuty = CustomsDuty(_price);
-
-var _path = CreateTempDirectoryAndWrite(@"C:\TempDuty");
-
-var _lastRequests = ReadFile(_path);
+var _path = @"C:\TempDuty";
 
 /// <summary>
 /// создает файл и записывает в него все цены и пошлины (возращает путь потому что лень стало заморачиваться( )
 /// </summary>
-string CreateTempDirectoryAndWrite(string path) 
+string CreateTempDirectoryAndWrite(string path, double price,string customsDuty) 
 {
     try
     {
@@ -50,7 +43,7 @@ string CreateTempDirectoryAndWrite(string path)
 
         using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
         {
-            sw.WriteLine($"цена = {_price} {_customsDuty}");
+            sw.WriteLine($"цена = {price} {customsDuty}");
         }
         return writePath.ToString();
     }
@@ -98,13 +91,19 @@ string CustomsDuty(double price)
         var excess = price - 200;
         var customsDuty = excess * 0.15;
         return "Пошлина = " + customsDuty.ToString();
-    }
-        
+    }        
+}
+
+StringBuilder MegaFunction(double price) 
+{
+    var customsDuty = CustomsDuty(price);
+    var path = CreateTempDirectoryAndWrite(_path, price, customsDuty);
+    return ReadFile(path);
 }
 
 app.MapGet
     (
-        "/customs_duty", () => _customsDuty + "\n\n" + "Прошлые запросы" +"\n" + _lastRequests.ToString()
+        "/customs_duty", (double price) => CustomsDuty(price) + "\n\n" + "Прошлые запросы" + "\n" + MegaFunction(price)
     );
 
 app.Run();
